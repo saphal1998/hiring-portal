@@ -1,0 +1,3123 @@
+{
+	"info": {
+		"_postman_id": "e33f2aac-c69a-427c-bbf2-311e58a05772",
+		"name": "Millow Test API",
+		"description": "This is the API with all the testing  endpoints\n\nWe have four entities so far, namely\n\n- Company\n- Candidate\n- Jobs\n- Admin\n\nNow in each of the following we have several endpoints, each in their individual folder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"hr_email\": \"hr@netflix.com\",\n\t\"name\": \"Netflix\",\n\t\"password\": \"password\",\n\t\"website\": \"http://www.netflix.com\",\n\t\"description\": \"Media and Entertainment\",\n\t\"year_founded\": \"1997\",\n\t\"team_size\": \"500+\",\n\t\"CEO\" : \"Reed Hasstings\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"social media\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"fb\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/company/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"signup"
+							]
+						},
+						"description": "Use this endpoint to create a company"
+					},
+					"response": [
+						{
+							"name": "Create Company - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"hr_email\": \"hr@millow.io\",\n\t\"name\": \"Millow\",\n\t\"password\": \"password\",\n\t\"website\": \"http://www.millow.io\",\n\t\"description\": \"Non Tech Recruitment Platform\",\n\t\"year_founded\": \"2019\",\n\t\"team_size\": \"11-50\",\n\t\"CEO\" : \"Karan Bhatty\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"recruitment\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"hiring\"\n\t\t}\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/company/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2-m8K/SCo73iAml8ftKL6cpYYWw1A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Mar 2020 23:03:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"company_id\": 8,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNTg1Njk1ODE3LCJleHAiOjE1ODU3MDY2MTd9.wZKa6A5Eqc1e8P0dbeymJgX3aox-DgGZFGeahHOFT7c\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All the Jobs ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzM1NzI1LCJleHAiOjE1ODU3NDY1MjV9.dWQwzY5Lp6w1L-wEkphLJZpd-Pan_Vzu-3H6xNotnig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/company/jobs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"jobs"
+							]
+						},
+						"description": "This endpoint can be used to get all the jobs of a particular company"
+					},
+					"response": [
+						{
+							"name": "Get All the Jobs - Successful (but empty)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/company/jobs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-3Ifsq0z1iLsjNS6mHGHeSglhQv0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Mar 2020 21:32:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"jobs\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Tags For Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzM1NzI1LCJleHAiOjE1ODU3NDY1MjV9.dWQwzY5Lp6w1L-wEkphLJZpd-Pan_Vzu-3H6xNotnig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"type": "text",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"startup\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"mvp\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/addTags",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"addTags"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Tags For Company - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"type": "text",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"startup\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"mvp\"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/company/addTags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"addTags"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-CbKUZbimu9qcbEgMlGX1l0Bnjd0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 10:12:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 2,\n    \"insertId\": 0,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"&Records: 2  Duplicates: 0  Warnings: 0\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Login Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"hr_email\":\"hr@millow.io\",\n\t\"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/company/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"signin"
+							]
+						},
+						"description": "This is used to login to the company"
+					},
+					"response": [
+						{
+							"name": "Login Company - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"hr_email\":\"hr@millow.io\",\n\t\"password\": \"password\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/company/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b4-cRQMRXzSgFhIpz0lDJyzpk6j21g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Mar 2020 21:31:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NjkwMzE5LCJleHAiOjE1ODU3MDExMTl9.9pLeAmxXxS6HMmmGEXAMOSWHNTIcGfsRkS7wY_WR1mo\",\n    \"company_id\": 1,\n    \"name\": \"Millow\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzU2NTU4LCJleHAiOjE1ODU3NjczNTh9.6XcpK7YAQTkRO5X4efSPhsizkbfDOMOoUC05BrupU0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/company/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Company Information - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/company/info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c5-jrKtSVRVvVwWy760yJ8zx1aGg58\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 10:10:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"info\": {\n        \"company_info\": [\n            {\n                \"name\": \"Millow\",\n                \"hr_email\": \"hr@millow.io\",\n                \"website\": \"http://www.millow.io\",\n                \"description\": \"Non Tech Recruitment Platform\",\n                \"year_founded\": \"2019\",\n                \"team_size\": \"11-50\",\n                \"CEO\": \"Karan Bhatty\",\n                \"CEO_social\": null,\n                \"created_at\": \"2020-04-01T10:01:09.000Z\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"word\": \"recruitment\"\n            },\n            {\n                \"word\": \"hiring\"\n            },\n            {\n                \"word\": \"recruiting\"\n            },\n            {\n                \"word\": \"statistics\"\n            },\n            {\n                \"word\": \"contact\"\n            },\n            {\n                \"word\": \"logo\"\n            },\n            {\n                \"word\": \"map\"\n            }\n        ],\n        \"media\": [\n            {\n                \"media_id\": 1,\n                \"company_id\": 1,\n                \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/17-1.png\",\n                \"tag_id\": 17,\n                \"tag\": [\n                    {\n                        \"tag_id\": 17,\n                        \"word\": \"logo\"\n                    }\n                ]\n            },\n            {\n                \"media_id\": 2,\n                \"company_id\": 1,\n                \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/18-1.40\",\n                \"tag_id\": 18,\n                \"tag\": [\n                    {\n                        \"tag_id\": 18,\n                        \"word\": \"map\"\n                    }\n                ]\n            }\n        ],\n        \"more_info\": [\n            {\n                \"info_id\": 1,\n                \"company_id\": 1,\n                \"info\": \"Demo data millow\",\n                \"tag_id\": 14,\n                \"urls\": \"http://www.google.com\",\n                \"verified\": 0,\n                \"tag\": [\n                    {\n                        \"tag_id\": 14,\n                        \"word\": \"recruiting\"\n                    }\n                ]\n            },\n            {\n                \"info_id\": 2,\n                \"company_id\": 1,\n                \"info\": \"hiring stats\",\n                \"tag_id\": 15,\n                \"urls\": \"https://www.millow.io/#third\",\n                \"verified\": 0,\n                \"tag\": [\n                    {\n                        \"tag_id\": 15,\n                        \"word\": \"statistics\"\n                    }\n                ]\n            },\n            {\n                \"info_id\": 3,\n                \"company_id\": 1,\n                \"info\": \"contact us\",\n                \"tag_id\": 16,\n                \"urls\": \"https://www.millow.io/contact.html\",\n                \"verified\": 0,\n                \"tag\": [\n                    {\n                        \"tag_id\": 16,\n                        \"word\": \"contact\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add More Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzM1NTA4LCJleHAiOjE1ODU3NDYzMDh9.RZmZJUSUwppGHAIlEI81DZknvc-Nzwfb3JeijnzxSDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"info\": \"about us\",\n\t\"tag\": {\n\t\t\"word\": \"about\"\n\t},\n\t\"url\": \"https://www.millow.io/index.html#first\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/moreInfo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"moreInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add More Info - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"info\": \"about us\",\n\t\"tag\": {\n\t\t\"word\": \"about\"\n\t},\n\t\"url\": \"https://www.millow.io/index.html#first\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/company/moreInfo",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"moreInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-Jv9LJHiSLyFYt0TV7WKcsQrIm9s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 10:13:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 4,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzM1NzI1LCJleHAiOjE1ODU3NDY1MjV9.dWQwzY5Lp6w1L-wEkphLJZpd-Pan_Vzu-3H6xNotnig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/zomato/Desktop/Screenshot 2020-04-01 at 3.44.09 PM.png"
+								},
+								{
+									"key": "resource",
+									"value": "clients",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/company/media",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"media"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Media - Sucessful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/zomato/Desktop/Screenshot 2020-04-01 at 3.44.09 PM.png"
+										},
+										{
+											"key": "resource",
+											"value": "clients",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/company/media",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-ER20urv2B7/DB1yF69L3EQPkdnc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 10:14:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"company_id\": \"1\",\n    \"tag_id\": 22,\n    \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/22-1.44\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Siddharth Basu\",\n\t\"password\" : \"password\",\n\t\"email\": \"sbasu@gmail.com\",\n\t\"phone_number\": \"9643995263\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"backend\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"bi\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"business intelligence\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/candidate/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User - Sucesssful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"Siddharth Basu\",\n\t\"password\" : \"password\",\n\t\"email\": \"sbasu@gmail.com\",\n\t\"phone_number\": \"9643995263\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"backend\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"bi\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"business intelligence\"\n\t\t}\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/candidate/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b4-m1GA0sksTQSyF3CD492rL2Kul1M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 10:16:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"candidate_id\": 4,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTg1NzM2MTcyLCJleHAiOjE1ODU3NDY5NzJ9.2CbOj6ZW8kmoSHtgeOKlm067PT8GX04I9BVmDGin2FA\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone_number\": \"9643995265\",\n\t\"password\": \"password\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"signin"
+							]
+						},
+						"description": "Used to login to the service"
+					},
+					"response": [
+						{
+							"name": "Login User - Succesful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone_number\": \"9643995265\",\n\t\"password\": \"password\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/candidate/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-tRCZMvlsOALJSr5zUXme5VEitiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:37:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUxODMyLCJleHAiOjE1ODU3NjI2MzJ9.UpM_3d2tlzL9nFLsFiQZ9UlBzJMz0g0yMrlTdazy8NI\",\n    \"candidate_id\": 1,\n    \"name\": \"Saphal Patro\",\n    \"active\": 1\n}"
+						},
+						{
+							"name": "Login User - Succesful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone_number\": \"9643995265\",\n\t\"password\": \"password\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/candidate/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-tRCZMvlsOALJSr5zUXme5VEitiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:37:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUxODMyLCJleHAiOjE1ODU3NjI2MzJ9.UpM_3d2tlzL9nFLsFiQZ9UlBzJMz0g0yMrlTdazy8NI\",\n    \"candidate_id\": 1,\n    \"name\": \"Saphal Patro\",\n    \"active\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Apply for Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUxODMyLCJleHAiOjE1ODU3NjI2MzJ9.UpM_3d2tlzL9nFLsFiQZ9UlBzJMz0g0yMrlTdazy8NI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "candidate_id",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "job_id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/apply",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"apply"
+							]
+						},
+						"description": "Use this endpoint to apply for the job"
+					},
+					"response": [
+						{
+							"name": "Apply for Job - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "candidate_id",
+										"value": "1",
+										"type": "text"
+									},
+									{
+										"key": "job_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/candidate/apply",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"apply"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-r8bKvcfQJxHfmO4yrVRF/uUE37I\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:38:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 0,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all Jobs applied",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUxODMyLCJleHAiOjE1ODU3NjI2MzJ9.UpM_3d2tlzL9nFLsFiQZ9UlBzJMz0g0yMrlTdazy8NI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "candidate_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/candidate/jobs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"jobs"
+							]
+						},
+						"description": "This endpoint can be used to get all the jobs applied for"
+					},
+					"response": [
+						{
+							"name": "Get all Jobs applied - Successsful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "candidate_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/candidate/jobs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3841"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f01-RDgesA++50K4UA4FCQNmoJgj/Nc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 15:18:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"job_id\": 1,\n        \"info\": \"sde\",\n        \"company_id\": 1,\n        \"test_time\": 180,\n        \"total_questions\": 20,\n        \"video_time\": 60,\n        \"video_num\": 2,\n        \"obj_time\": 60,\n        \"obj_num\": 15,\n        \"sub_num\": 3,\n        \"sub_time\": 60,\n        \"ctc_max\": 2000000,\n        \"ctc_min\": 1000000,\n        \"experience_required_max\": 24,\n        \"experience_required_min\": 12,\n        \"notice_period\": 14,\n        \"created_at\": \"2020-04-01T14:19:58.000Z\",\n        \"active\": 1,\n        \"jobStatus\": [\n            {\n                \"job_id\": 1,\n                \"active\": 1,\n                \"hired\": 0,\n                \"testStatus\": 0\n            }\n        ],\n        \"job_tags\": [\n            {\n                \"tag_id\": 1,\n                \"word\": \"sde\"\n            },\n            {\n                \"tag_id\": 10,\n                \"word\": \"hiring\"\n            },\n            {\n                \"tag_id\": 32,\n                \"word\": \"java\"\n            },\n            {\n                \"tag_id\": 33,\n                \"word\": \"cpp\"\n            },\n            {\n                \"tag_id\": 34,\n                \"word\": \"networks\"\n            },\n            {\n                \"tag_id\": 35,\n                \"word\": \"operating systems\"\n            }\n        ],\n        \"company_details\": [\n            {\n                \"name\": \"Millow\",\n                \"company_id\": 1,\n                \"hr_email\": \"hr@millow.io\",\n                \"website\": \"http://www.millow.io\",\n                \"description\": \"Non Tech Recruitment Platform\",\n                \"year_founded\": \"2019\",\n                \"team_size\": \"11-50\",\n                \"CEO\": \"Karan Bhatty\",\n                \"CEO_social\": null,\n                \"created_at\": \"2020-04-01T10:01:09.000Z\",\n                \"company_tags\": [],\n                \"media\": [\n                    {\n                        \"media_id\": 1,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/17-1.png\",\n                        \"tag_id\": 17,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 17,\n                                \"word\": \"logo\"\n                            }\n                        ]\n                    },\n                    {\n                        \"media_id\": 2,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/18-1.40\",\n                        \"tag_id\": 18,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 18,\n                                \"word\": \"map\"\n                            }\n                        ]\n                    },\n                    {\n                        \"media_id\": 3,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/22-1.44\",\n                        \"tag_id\": 22,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 22,\n                                \"word\": \"clients\"\n                            }\n                        ]\n                    }\n                ],\n                \"more_info\": [\n                    {\n                        \"info_id\": 1,\n                        \"company_id\": 1,\n                        \"info\": \"Demo data millow\",\n                        \"tag_id\": 14,\n                        \"urls\": \"http://www.google.com\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 14,\n                                \"word\": \"recruiting\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 2,\n                        \"company_id\": 1,\n                        \"info\": \"hiring stats\",\n                        \"tag_id\": 15,\n                        \"urls\": \"https://www.millow.io/#third\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 15,\n                                \"word\": \"statistics\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 3,\n                        \"company_id\": 1,\n                        \"info\": \"contact us\",\n                        \"tag_id\": 16,\n                        \"urls\": \"https://www.millow.io/contact.html\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 16,\n                                \"word\": \"contact\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 4,\n                        \"company_id\": 1,\n                        \"info\": \"about us\",\n                        \"tag_id\": 21,\n                        \"urls\": \"https://www.millow.io/index.html#first\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 21,\n                                \"word\": \"about\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"job_id\": 2,\n        \"info\": \"hr\",\n        \"company_id\": 1,\n        \"test_time\": 180,\n        \"total_questions\": 20,\n        \"video_time\": 60,\n        \"video_num\": 2,\n        \"obj_time\": 60,\n        \"obj_num\": 15,\n        \"sub_num\": 3,\n        \"sub_time\": 60,\n        \"ctc_max\": 2000000,\n        \"ctc_min\": 1000000,\n        \"experience_required_max\": 24,\n        \"experience_required_min\": 12,\n        \"notice_period\": 14,\n        \"created_at\": \"2020-04-01T14:20:30.000Z\",\n        \"active\": 1,\n        \"jobStatus\": [\n            {\n                \"job_id\": 2,\n                \"active\": 1,\n                \"hired\": 0,\n                \"testStatus\": 0\n            }\n        ],\n        \"job_tags\": [\n            {\n                \"tag_id\": 4,\n                \"word\": \"hr\"\n            },\n            {\n                \"tag_id\": 10,\n                \"word\": \"hiring\"\n            }\n        ],\n        \"company_details\": [\n            {\n                \"name\": \"Millow\",\n                \"company_id\": 1,\n                \"hr_email\": \"hr@millow.io\",\n                \"website\": \"http://www.millow.io\",\n                \"description\": \"Non Tech Recruitment Platform\",\n                \"year_founded\": \"2019\",\n                \"team_size\": \"11-50\",\n                \"CEO\": \"Karan Bhatty\",\n                \"CEO_social\": null,\n                \"created_at\": \"2020-04-01T10:01:09.000Z\",\n                \"company_tags\": [],\n                \"media\": [\n                    {\n                        \"media_id\": 1,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/17-1.png\",\n                        \"tag_id\": 17,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 17,\n                                \"word\": \"logo\"\n                            }\n                        ]\n                    },\n                    {\n                        \"media_id\": 2,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/18-1.40\",\n                        \"tag_id\": 18,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 18,\n                                \"word\": \"map\"\n                            }\n                        ]\n                    },\n                    {\n                        \"media_id\": 3,\n                        \"company_id\": 1,\n                        \"url\": \"https://assessment-documents.s3.ap-south-1.amazonaws.com/22-1.44\",\n                        \"tag_id\": 22,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 22,\n                                \"word\": \"clients\"\n                            }\n                        ]\n                    }\n                ],\n                \"more_info\": [\n                    {\n                        \"info_id\": 1,\n                        \"company_id\": 1,\n                        \"info\": \"Demo data millow\",\n                        \"tag_id\": 14,\n                        \"urls\": \"http://www.google.com\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 14,\n                                \"word\": \"recruiting\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 2,\n                        \"company_id\": 1,\n                        \"info\": \"hiring stats\",\n                        \"tag_id\": 15,\n                        \"urls\": \"https://www.millow.io/#third\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 15,\n                                \"word\": \"statistics\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 3,\n                        \"company_id\": 1,\n                        \"info\": \"contact us\",\n                        \"tag_id\": 16,\n                        \"urls\": \"https://www.millow.io/contact.html\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 16,\n                                \"word\": \"contact\"\n                            }\n                        ]\n                    },\n                    {\n                        \"info_id\": 4,\n                        \"company_id\": 1,\n                        \"info\": \"about us\",\n                        \"tag_id\": 21,\n                        \"urls\": \"https://www.millow.io/index.html#first\",\n                        \"verified\": 0,\n                        \"tag\": [\n                            {\n                                \"tag_id\": 21,\n                                \"word\": \"about\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Job Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"candidate_id\": 1,\n\t\"job_id\": 33\n}"
+						},
+						"url": {
+							"raw": "{{url}}/candidate/jobStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"jobStatus"
+							]
+						},
+						"description": "This endpoint is used to get the status of the job"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone_number\": \"9643995265\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/forgotPassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"forgotPassword"
+							]
+						},
+						"description": "Use this endpoint in case of Forgot Password"
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone_number\": \"9643996725\",\n\t\"new_password\": \"password\",\n\t\"token\":  \"532363\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/validateToken",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"validateToken"
+							]
+						},
+						"description": "Use this endpoint to validate token"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUxODMyLCJleHAiOjE1ODU3NjI2MzJ9.UpM_3d2tlzL9nFLsFiQZ9UlBzJMz0g0yMrlTdazy8NI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "candidate_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/getAllJobs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"getAllJobs"
+							]
+						},
+						"description": "Get all the jobs on the platform"
+					},
+					"response": [
+						{
+							"name": "Get All Jobs - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "candidate_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/candidate/getAllJobs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"getAllJobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c36-7pLQsnJd3jugsaMxFBwlVHt5Sis\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 15:18:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"job_id\": 1,\n        \"info\": \"sde\",\n        \"company_id\": 1,\n        \"test_time\": 180,\n        \"total_questions\": 20,\n        \"video_time\": 60,\n        \"video_num\": 2,\n        \"obj_time\": 60,\n        \"obj_num\": 15,\n        \"sub_num\": 3,\n        \"sub_time\": 60,\n        \"ctc_max\": 2000000,\n        \"ctc_min\": 1000000,\n        \"experience_required_max\": 24,\n        \"experience_required_min\": 12,\n        \"notice_period\": 14,\n        \"created_at\": \"2020-04-01T14:19:58.000Z\",\n        \"active\": 1,\n        \"jobStatus\": [\n            {\n                \"job_id\": 1,\n                \"active\": 1,\n                \"hired\": 0,\n                \"testStatus\": 0\n            }\n        ],\n        \"job_tags\": [\n            {\n                \"tag_id\": 1,\n                \"word\": \"sde\"\n            },\n            {\n                \"tag_id\": 10,\n                \"word\": \"hiring\"\n            },\n            {\n                \"tag_id\": 32,\n                \"word\": \"java\"\n            },\n            {\n                \"tag_id\": 33,\n                \"word\": \"cpp\"\n            },\n            {\n                \"tag_id\": 34,\n                \"word\": \"networks\"\n            },\n            {\n                \"tag_id\": 35,\n                \"word\": \"operating systems\"\n            }\n        ],\n        \"company_info\": [\n            {\n                \"hr_email\": \"hr@millow.io\",\n                \"name\": \"Millow\",\n                \"company_id\": 1,\n                \"company_tags\": [\n                    {\n                        \"tag_id\": 9,\n                        \"word\": \"recruitment\"\n                    },\n                    {\n                        \"tag_id\": 10,\n                        \"word\": \"hiring\"\n                    },\n                    {\n                        \"tag_id\": 14,\n                        \"word\": \"recruiting\"\n                    },\n                    {\n                        \"tag_id\": 15,\n                        \"word\": \"statistics\"\n                    },\n                    {\n                        \"tag_id\": 16,\n                        \"word\": \"contact\"\n                    },\n                    {\n                        \"tag_id\": 17,\n                        \"word\": \"logo\"\n                    },\n                    {\n                        \"tag_id\": 18,\n                        \"word\": \"map\"\n                    },\n                    {\n                        \"tag_id\": 19,\n                        \"word\": \"startup\"\n                    },\n                    {\n                        \"tag_id\": 20,\n                        \"word\": \"mvp\"\n                    },\n                    {\n                        \"tag_id\": 21,\n                        \"word\": \"about\"\n                    },\n                    {\n                        \"tag_id\": 22,\n                        \"word\": \"clients\"\n                    },\n                    {\n                        \"tag_id\": 32,\n                        \"word\": \"java\"\n                    },\n                    {\n                        \"tag_id\": 33,\n                        \"word\": \"cpp\"\n                    },\n                    {\n                        \"tag_id\": 34,\n                        \"word\": \"networks\"\n                    },\n                    {\n                        \"tag_id\": 35,\n                        \"word\": \"operating systems\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"job_id\": 2,\n        \"info\": \"hr\",\n        \"company_id\": 1,\n        \"test_time\": 180,\n        \"total_questions\": 20,\n        \"video_time\": 60,\n        \"video_num\": 2,\n        \"obj_time\": 60,\n        \"obj_num\": 15,\n        \"sub_num\": 3,\n        \"sub_time\": 60,\n        \"ctc_max\": 2000000,\n        \"ctc_min\": 1000000,\n        \"experience_required_max\": 24,\n        \"experience_required_min\": 12,\n        \"notice_period\": 14,\n        \"created_at\": \"2020-04-01T14:20:30.000Z\",\n        \"active\": 1,\n        \"jobStatus\": [\n            {\n                \"job_id\": 2,\n                \"active\": 1,\n                \"hired\": 0,\n                \"testStatus\": 0\n            }\n        ],\n        \"job_tags\": [\n            {\n                \"tag_id\": 4,\n                \"word\": \"hr\"\n            },\n            {\n                \"tag_id\": 10,\n                \"word\": \"hiring\"\n            }\n        ],\n        \"company_info\": [\n            {\n                \"hr_email\": \"hr@millow.io\",\n                \"name\": \"Millow\",\n                \"company_id\": 1,\n                \"company_tags\": [\n                    {\n                        \"tag_id\": 9,\n                        \"word\": \"recruitment\"\n                    },\n                    {\n                        \"tag_id\": 10,\n                        \"word\": \"hiring\"\n                    },\n                    {\n                        \"tag_id\": 14,\n                        \"word\": \"recruiting\"\n                    },\n                    {\n                        \"tag_id\": 15,\n                        \"word\": \"statistics\"\n                    },\n                    {\n                        \"tag_id\": 16,\n                        \"word\": \"contact\"\n                    },\n                    {\n                        \"tag_id\": 17,\n                        \"word\": \"logo\"\n                    },\n                    {\n                        \"tag_id\": 18,\n                        \"word\": \"map\"\n                    },\n                    {\n                        \"tag_id\": 19,\n                        \"word\": \"startup\"\n                    },\n                    {\n                        \"tag_id\": 20,\n                        \"word\": \"mvp\"\n                    },\n                    {\n                        \"tag_id\": 21,\n                        \"word\": \"about\"\n                    },\n                    {\n                        \"tag_id\": 22,\n                        \"word\": \"clients\"\n                    },\n                    {\n                        \"tag_id\": 32,\n                        \"word\": \"java\"\n                    },\n                    {\n                        \"tag_id\": 33,\n                        \"word\": \"cpp\"\n                    },\n                    {\n                        \"tag_id\": 34,\n                        \"word\": \"networks\"\n                    },\n                    {\n                        \"tag_id\": 35,\n                        \"word\": \"operating systems\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"job_id\": 3,\n        \"info\": \"sales\",\n        \"company_id\": 1,\n        \"test_time\": 180,\n        \"total_questions\": 20,\n        \"video_time\": 60,\n        \"video_num\": 2,\n        \"obj_time\": 60,\n        \"obj_num\": 15,\n        \"sub_num\": 3,\n        \"sub_time\": 60,\n        \"ctc_max\": 2000000,\n        \"ctc_min\": 1000000,\n        \"experience_required_max\": 24,\n        \"experience_required_min\": 12,\n        \"notice_period\": 14,\n        \"created_at\": \"2020-04-01T14:20:41.000Z\",\n        \"active\": 1,\n        \"jobStatus\": [],\n        \"job_tags\": [\n            {\n                \"tag_id\": 10,\n                \"word\": \"hiring\"\n            },\n            {\n                \"tag_id\": 25,\n                \"word\": \"sales\"\n            }\n        ],\n        \"company_info\": [\n            {\n                \"hr_email\": \"hr@millow.io\",\n                \"name\": \"Millow\",\n                \"company_id\": 1,\n                \"company_tags\": [\n                    {\n                        \"tag_id\": 9,\n                        \"word\": \"recruitment\"\n                    },\n                    {\n                        \"tag_id\": 10,\n                        \"word\": \"hiring\"\n                    },\n                    {\n                        \"tag_id\": 14,\n                        \"word\": \"recruiting\"\n                    },\n                    {\n                        \"tag_id\": 15,\n                        \"word\": \"statistics\"\n                    },\n                    {\n                        \"tag_id\": 16,\n                        \"word\": \"contact\"\n                    },\n                    {\n                        \"tag_id\": 17,\n                        \"word\": \"logo\"\n                    },\n                    {\n                        \"tag_id\": 18,\n                        \"word\": \"map\"\n                    },\n                    {\n                        \"tag_id\": 19,\n                        \"word\": \"startup\"\n                    },\n                    {\n                        \"tag_id\": 20,\n                        \"word\": \"mvp\"\n                    },\n                    {\n                        \"tag_id\": 21,\n                        \"word\": \"about\"\n                    },\n                    {\n                        \"tag_id\": 22,\n                        \"word\": \"clients\"\n                    },\n                    {\n                        \"tag_id\": 32,\n                        \"word\": \"java\"\n                    },\n                    {\n                        \"tag_id\": 33,\n                        \"word\": \"cpp\"\n                    },\n                    {\n                        \"tag_id\": 34,\n                        \"word\": \"networks\"\n                    },\n                    {\n                        \"tag_id\": 35,\n                        \"word\": \"operating systems\"\n                    }\n                ]\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzU2NDYxLCJleHAiOjE1ODU3NjcyNjF9.GC8V8-jCQGyP4ea1wrWb66Z2uK6Pj_dMQTAOXQTAjYw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "candidate_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"me"
+							]
+						},
+						"description": "Get the name, email and phone_number of a candidate"
+					},
+					"response": [
+						{
+							"name": "Get Profile - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"candidate_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/candidate/me",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"candidate",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-vHVkxmwzSe59s3nh4fR++halmOI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Mar 2020 06:44:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"Siddharth Basu\",\n        \"email\": \"sbasu@gail.com\",\n        \"phone_number\": \"9643995015\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Tags For Candidate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzM0ODc2LCJleHAiOjE1ODU3NDU2NzZ9.lZRjYt-gE9rD9XrNztl9Ye97JmWolko4NpNbW1yEFFU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "candidate_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"java\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"cpp\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"NeTWoRks\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"   Operating Systems  \"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/candidate/addTags",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"candidate",
+								"addTags"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Submit Answer - Subjective",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTg1NzMxNTA4LCJleHAiOjE1ODU3NDIzMDh9.utXKU96n3EM0D_Xw8XThctQyYCsQLiImdmDGsWRgsNk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "job_id",
+								"value": "2",
+								"type": "text"
+							},
+							{
+								"key": "candidate_id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"answers\": [\n\t\t{\n\t\t\t\"question_id\": 5,\n\t\t\t\"answer\": \"I am pickle rick, I think I deserve to be hired\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/job/submitAnswers/subjective",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"submitAnswers",
+								"subjective"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUwNzE2LCJleHAiOjE1ODU3NjE1MTZ9.3NuclO97rLdGA2HNALAYSE_7Aqz_wKCC2fPkmWyaM10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"info\" : \"sales\",\n\t\"test_time\" : 180,\n\t\"total_questions\": 20,\n\t\"video_time\": 60,\n\t\"video_num\": 2,\n\t\"obj_time\": 60,\n\t\"obj_num\": 15,\n\t\"sub_time\": 60,\n\t\"sub_num\": 3,\n\t\"ctc_min\": \"1000000\",\n\t\"ctc_max\": \"2000000\",\n\t\"experience_required_max\": \"24\",\n\t\"experience_required_min\": \"12\",\n\t\"notice_period\": \"14\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"sales\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"hiring\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/job/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"create"
+							]
+						},
+						"description": "This endpoint is used to create a Job for a particular company"
+					},
+					"response": [
+						{
+							"name": "Create Job - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"info\" : \"sde\",\n\t\"test_time\" : 180,\n\t\"total_questions\": 20,\n\t\"video_time\": 60,\n\t\"video_num\": 2,\n\t\"obj_time\": 60,\n\t\"obj_num\": 15,\n\t\"sub_time\": 60,\n\t\"sub_num\": 3,\n\t\"ctc_min\": \"1000000\",\n\t\"ctc_max\": \"2000000\",\n\t\"experience_required_max\": \"24\",\n\t\"experience_required_min\": \"12\",\n\t\"notice_period\": \"14\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"sde\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"hiring\"\n\t\t}\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/job/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"job",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-Lvf6mzmj8ovpmEPTnjkZh/58UXM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:19:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"job_id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"job_id\": 100\n}"
+						},
+						"url": {
+							"raw": "{{url}}/job/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"delete"
+							]
+						},
+						"description": "Use this endpoint to delete job. Done using active field."
+					},
+					"response": [
+						{
+							"name": "Delete Job - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"job_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/job/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"job",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-Lvf6mzmj8ovpmEPTnjkZh/58UXM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Feb 2020 15:27:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"job_id\": 1\n}"
+						},
+						{
+							"name": "Job Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"job_id\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/job/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"job",
+										"delete"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-D6bjxK1WJ2yjXMNzRCqGLzju1ac\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Feb 2020 15:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Job not found!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Select Questions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUwNzE2LCJleHAiOjE1ODU3NjE1MTZ9.3NuclO97rLdGA2HNALAYSE_7Aqz_wKCC2fPkmWyaM10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "job_id",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "question_id",
+								"value": "4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/job/selectQuestion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"selectQuestion"
+							]
+						},
+						"description": "This endpoint is used to populate the questions to be asked for that job"
+					},
+					"response": [
+						{
+							"name": "Select Questions - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									},
+									{
+										"key": "job_id",
+										"value": "3",
+										"type": "text"
+									},
+									{
+										"key": "question_id",
+										"value": "4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/job/selectQuestion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"job",
+										"selectQuestion"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-s6H943NFDKEKSthCQjEI+yoygbA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:28:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"job_id\": \"3\",\n        \"question_id\": \"4\",\n        \"company_id\": \"1\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Hire Candidate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"candidate_id\": 1,\n\t\"job_id\" : 2\n}"
+						},
+						"url": {
+							"raw": "{{url}}/job/hire",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"hire"
+							]
+						},
+						"description": "This endpoint is used to hire candidate"
+					},
+					"response": [
+						{
+							"name": "Hire Candidate - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"candidate_id\": 1,\n\t\"job_id\" : 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/job/hire",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"job",
+										"hire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-T5aPvOI/f7qqsw8/+K2Zg56MQf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Feb 2020 16:51:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"job_id\": 2,\n        \"candidate_id\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Submit Answers - Video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTgyNzQyNzk2LCJleHAiOjE1ODI3NTM1OTZ9.ExWgcrDGGV3W0Wl7E7F3f5hSQzccC-isJJVwC_T5hkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/Users/zomato/Desktop/millow_test_api/star_trails.mkv"
+								},
+								{
+									"key": "candidate_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "job_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "question_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/job/submitAnswers/video",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"submitAnswers",
+								"video"
+							]
+						},
+						"description": "This endpoint is to submit answers to Video questions. We need to upload to a S3 bucket\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tags For Jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUwNzE2LCJleHAiOjE1ODU3NjE1MTZ9.3NuclO97rLdGA2HNALAYSE_7Aqz_wKCC2fPkmWyaM10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"type": "text",
+								"value": "1"
+							},
+							{
+								"key": "job_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"java\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"cpp\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"NeTWoRks\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"   Operating Systems  \"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/jobs/addTags",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobs",
+								"addTags"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Tags For Jobs - Successsful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"type": "text",
+										"value": "1"
+									},
+									{
+										"key": "job_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"java\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"cpp\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"NeTWoRks\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"   Operating Systems  \"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/jobs/addTags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"jobs",
+										"addTags"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-ER7zeqt+ICQiVpNSGA3d/FQnTaY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:35:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 4,\n    \"insertId\": 0,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"&Records: 4  Duplicates: 0  Warnings: 0\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Questions For A Job",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTg1NzMxNTA4LCJleHAiOjE1ODU3NDIzMDh9.utXKU96n3EM0D_Xw8XThctQyYCsQLiImdmDGsWRgsNk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "candidate_id",
+								"value": "2",
+								"type": "text"
+							},
+							{
+								"key": "job_id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/job/questions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Question Bank",
+			"item": [
+				{
+					"name": "Add Question - Company specific",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUwNzE2LCJleHAiOjE1ODU3NjE1MTZ9.3NuclO97rLdGA2HNALAYSE_7Aqz_wKCC2fPkmWyaM10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"question\": \"Describe your professional experience\",\n\t\"time\": 60,\n\t\"tags\":[\n\t\t{\n\t\t\t\"word\": \"video\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"personality\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/addQuestion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"addQuestion"
+							]
+						},
+						"description": "Use this endpoint to add questions.\n\nIf company_id is specified, it becomes company specific"
+					},
+					"response": [
+						{
+							"name": "Add Question - Company specific - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"question\": \"Describe your professional experience\",\n\t\"time\": 60,\n\t\"tags\":[\n\t\t{\n\t\t\t\"word\": \"video\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"personality\"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/company/addQuestion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"addQuestion"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-ZkhP2fwH218V77+Voz8+RvSl8Wc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:29:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"question\": {\n        \"id\": 5,\n        \"company_id\": \"1\",\n        \"question\": \"Describe your professional experience\",\n        \"time\": 60\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Tags For question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NzUwNzE2LCJleHAiOjE1ODU3NjE1MTZ9.3NuclO97rLdGA2HNALAYSE_7Aqz_wKCC2fPkmWyaM10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "company_id",
+								"type": "text",
+								"value": "1"
+							},
+							{
+								"key": "question_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"tech companies\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"gk\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/question/addTags",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"question",
+								"addTags"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Tags For question - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "company_id",
+										"type": "text",
+										"value": "1"
+									},
+									{
+										"key": "question_id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"tags\": [\n\t\t{\n\t\t\t\"word\": \"tech companies\"\n\t\t},\n\t\t{\n\t\t\t\"word\": \"gk\"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/company/question/addTags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"question",
+										"addTags"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-CbKUZbimu9qcbEgMlGX1l0Bnjd0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Apr 2020 14:36:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 2,\n    \"insertId\": 0,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"&Records: 2  Duplicates: 0  Warnings: 0\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Question - Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNTgyNDY2MTkxLCJleHAiOjE1ODI0NzY5OTF9.brdGq0HF4KsaTmgMgQ6piA9X5k7WpzaPUHjTZCO2rwE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"job_type_id\": 1,\n\t\"question_type\" : 1,\n\t\"question\": \"What's the goal of software development?\",\n\t\"time\": 2,\n\t\"admin_id\" : 6\n}"
+						},
+						"url": {
+							"raw": "{{url}}/admin/addQuestion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"addQuestion"
+							]
+						},
+						"description": "This endpoint is to add standard question bank questions"
+					},
+					"response": [
+						{
+							"name": "Add Question - Admin ( Successful)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"job_type_id\": 1,\n\t\"question_type\" : 1,\n\t\"question\": \"What's the goal of software development?\",\n\t\"time\": 2,\n\t\"admin_id\" : 6\n}"
+								},
+								"url": {
+									"raw": "{{url}}/admin/addQuestion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"addQuestion"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-XfK6dz1dazs7/UBhkd7kHVzhWPI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Feb 2020 13:58:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"question\": {\n        \"id\": 1,\n        \"job_type_id\": 1,\n        \"question_type\": 1,\n        \"question\": \"What's the goal of software development?\",\n        \"time\": 2\n    }\n}"
+						},
+						{
+							"name": "Only Standard Question Bank",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"job_type_id\": 1,\n\t\"question_type\" : 1,\n\t\"question\": \"What's the goal of software development?\",\n\t\"time\": 2,\n\t\"admin_id\" : 6,\n\t\"company_id\": 2\n}"
+								},
+								"url": {
+									"raw": "{{url}}/admin/addQuestion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"addQuestion"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a0-vSqV9LsVBOHRps1w8CtqbnVgczY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Feb 2020 14:00:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"child \\\"body\\\" fails because [child \\\"company_id\\\" fails because [\\\"company_id\\\" must be one of [1, null]]]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"spatro@gmail.com\",\n\t\"password\": \"password\",\n\t\"name\": \"Saphal Patro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"signup"
+							]
+						},
+						"description": "This endpoint is used to create an Admin"
+					},
+					"response": [
+						{
+							"name": "Create Admin - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"spatro@gmail.com\",\n\t\"password\": \"password\",\n\t\"name\": \"Saphal Patro\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b0-Nvre04s223ppWmCsriKbxtGukuI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Feb 2020 13:56:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"admin_id\": 6,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNTgyNDY2MTkxLCJleHAiOjE1ODI0NzY5OTF9.brdGq0HF4KsaTmgMgQ6piA9X5k7WpzaPUHjTZCO2rwE\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"saphal@gmail.com\",\n\t\"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"signin"
+							]
+						},
+						"description": "This endpoint is used to login as Admin\n"
+					},
+					"response": [
+						{
+							"name": "Login Admin - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"saphal@gmail.com\",\n\t\"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-c3pZqLH+0ZrU/nnW6EtgMU20hWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Feb 2020 14:07:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTgyNDY2ODI0LCJleHAiOjE1ODI0Nzc2MjR9.X7jlZ0k4PtwaTbi435jls91Rf5NGvEfO3640fXgkHqw\",\n    \"admin_id\": 3,\n    \"name\": \"Saphal Patro\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6d97f5ee-5c93-49e2-ace8-49396e750dac",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3f683da6-847c-48e0-9199-989a1e19c14d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
