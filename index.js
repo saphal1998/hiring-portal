@@ -40,11 +40,11 @@ app.use(function(err, req, res, next) {
 
 app.listen(process.env.APP_PORT, async () => {
   try {
-    const millowId = await runQuery(
+    const companyId = await runQuery(
       `SELECT company_id FROM company WHERE hr_email = ?`,
-      process.env.MILLOW_EMAIL
+      process.env.COMPANY_EMAIL
     );
-    process.env.MILLOW_ID = millowId[0].company_id;
+    process.env.COMPANY_ID = companyId[0].company_id;
   } catch (err) {
     console.log(err);
   }
