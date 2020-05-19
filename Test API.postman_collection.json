@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e33f2aac-c69a-427c-bbf2-311e58a05772",
-		"name": "Millow Test API",
+		"name": "Test API",
 		"description": "This is the API with all the testing  endpoints\n\nWe have four entities so far, namely\n\n- Company\n- Candidate\n- Jobs\n- Admin\n\nNow in each of the following we have several endpoints, each in their individual folder",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -27,13 +27,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/signup",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"signup"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "signup"]
 						},
 						"description": "Use this endpoint to create a company"
 					},
@@ -56,13 +51,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/signup",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"signup"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "signup"]
 								}
 							},
 							"status": "Created",
@@ -139,13 +129,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/jobs",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"jobs"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "jobs"]
 						},
 						"description": "This endpoint can be used to get all the jobs of a particular company"
 					},
@@ -173,13 +158,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/jobs",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"jobs"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "jobs"]
 								}
 							},
 							"status": "OK",
@@ -252,13 +232,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/addTags",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"addTags"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "addTags"]
 						}
 					},
 					"response": [
@@ -284,13 +259,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/addTags",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"addTags"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "addTags"]
 								}
 							},
 							"status": "OK",
@@ -359,13 +329,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/signin",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"signin"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "signin"]
 						},
 						"description": "This is used to login to the company"
 					},
@@ -388,13 +353,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/signin",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"signin"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "signin"]
 								}
 							},
 							"status": "OK",
@@ -458,13 +418,8 @@
 						],
 						"url": {
 							"raw": "{{url}}/company/info",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"info"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "info"]
 						}
 					},
 					"response": [
@@ -481,13 +436,8 @@
 								],
 								"url": {
 									"raw": "{{url}}/company/info",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"info"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "info"]
 								}
 							},
 							"status": "OK",
@@ -560,13 +510,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/moreInfo",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"moreInfo"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "moreInfo"]
 						}
 					},
 					"response": [
@@ -592,13 +537,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/moreInfo",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"moreInfo"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "moreInfo"]
 								}
 							},
 							"status": "OK",
@@ -677,13 +617,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/media",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"media"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "media"]
 						}
 					},
 					"response": [
@@ -715,13 +650,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/media",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"media"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "media"]
 								}
 							},
 							"status": "OK",
@@ -786,13 +716,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/signup",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"signup"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "signup"]
 						}
 					},
 					"response": [
@@ -814,13 +739,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/signup",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"signup"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "signup"]
 								}
 							},
 							"status": "Created",
@@ -892,13 +812,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/signin",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"signin"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "signin"]
 						},
 						"description": "Used to login to the service"
 					},
@@ -924,13 +839,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/signin",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"signin"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "signin"]
 								}
 							},
 							"status": "OK",
@@ -990,13 +900,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/signin",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"signin"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "signin"]
 								}
 							},
 							"status": "OK",
@@ -1080,13 +985,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/apply",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"apply"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "apply"]
 						},
 						"description": "Use this endpoint to apply for the job"
 					},
@@ -1124,13 +1024,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/apply",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"apply"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "apply"]
 								}
 							},
 							"status": "OK",
@@ -1207,13 +1102,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/jobs",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"jobs"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "jobs"]
 						},
 						"description": "This endpoint can be used to get all the jobs applied for"
 					},
@@ -1241,13 +1131,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/jobs",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"jobs"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "jobs"]
 								}
 							},
 							"status": "OK",
@@ -1309,13 +1194,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/jobStatus",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"jobStatus"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "jobStatus"]
 						},
 						"description": "This endpoint is used to get the status of the job"
 					},
@@ -1344,13 +1224,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/forgotPassword",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"forgotPassword"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "forgotPassword"]
 						},
 						"description": "Use this endpoint in case of Forgot Password"
 					},
@@ -1379,13 +1254,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/validateToken",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"validateToken"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "validateToken"]
 						},
 						"description": "Use this endpoint to validate token"
 					},
@@ -1432,13 +1302,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/getAllJobs",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"getAllJobs"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "getAllJobs"]
 						},
 						"description": "Get all the jobs on the platform"
 					},
@@ -1471,13 +1336,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/getAllJobs",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"getAllJobs"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "getAllJobs"]
 								}
 							},
 							"status": "OK",
@@ -1559,13 +1419,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/me",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"me"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "me"]
 						},
 						"description": "Get the name, email and phone_number of a candidate"
 					},
@@ -1593,13 +1448,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/candidate/me",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"candidate",
-										"me"
-									]
+									"host": ["{{url}}"],
+									"path": ["candidate", "me"]
 								}
 							},
 							"status": "OK",
@@ -1672,13 +1522,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/candidate/addTags",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"candidate",
-								"addTags"
-							]
+							"host": ["{{url}}"],
+							"path": ["candidate", "addTags"]
 						}
 					},
 					"response": []
@@ -1726,14 +1571,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/submitAnswers/subjective",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"submitAnswers",
-								"subjective"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "submitAnswers", "subjective"]
 						}
 					},
 					"response": []
@@ -1771,13 +1610,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/create",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"create"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "create"]
 						},
 						"description": "This endpoint is used to create a Job for a particular company"
 					},
@@ -1805,13 +1639,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/job/create",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"job",
-										"create"
-									]
+									"host": ["{{url}}"],
+									"path": ["job", "create"]
 								}
 							},
 							"status": "Created",
@@ -1870,13 +1699,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/delete",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"delete"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "delete"]
 						},
 						"description": "Use this endpoint to delete job. Done using active field."
 					},
@@ -1904,13 +1728,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/job/delete",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"job",
-										"delete"
-									]
+									"host": ["{{url}}"],
+									"path": ["job", "delete"]
 								}
 							},
 							"status": "OK",
@@ -1968,13 +1787,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/job/delete",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"job",
-										"delete"
-									]
+									"host": ["{{url}}"],
+									"path": ["job", "delete"]
 								}
 							},
 							"status": "Not Found",
@@ -2054,13 +1868,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/selectQuestion",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"selectQuestion"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "selectQuestion"]
 						},
 						"description": "This endpoint is used to populate the questions to be asked for that job"
 					},
@@ -2098,13 +1907,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/job/selectQuestion",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"job",
-										"selectQuestion"
-									]
+									"host": ["{{url}}"],
+									"path": ["job", "selectQuestion"]
 								}
 							},
 							"status": "OK",
@@ -2163,13 +1967,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/hire",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"hire"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "hire"]
 						},
 						"description": "This endpoint is used to hire candidate"
 					},
@@ -2197,13 +1996,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/job/hire",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"job",
-										"hire"
-									]
+									"host": ["{{url}}"],
+									"path": ["job", "hire"]
 								}
 							},
 							"status": "OK",
@@ -2289,14 +2083,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/submitAnswers/video",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"submitAnswers",
-								"video"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "submitAnswers", "video"]
 						},
 						"description": "This endpoint is to submit answers to Video questions. We need to upload to a S3 bucket\n"
 					},
@@ -2339,13 +2127,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/jobs/addTags",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"jobs",
-								"addTags"
-							]
+							"host": ["{{url}}"],
+							"path": ["jobs", "addTags"]
 						}
 					},
 					"response": [
@@ -2376,13 +2159,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/jobs/addTags",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"jobs",
-										"addTags"
-									]
+									"host": ["{{url}}"],
+									"path": ["jobs", "addTags"]
 								}
 							},
 							"status": "OK",
@@ -2463,13 +2241,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/job/questions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"job",
-								"questions"
-							]
+							"host": ["{{url}}"],
+							"path": ["job", "questions"]
 						}
 					},
 					"response": []
@@ -2512,13 +2285,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/addQuestion",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"addQuestion"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "addQuestion"]
 						},
 						"description": "Use this endpoint to add questions.\n\nIf company_id is specified, it becomes company specific"
 					},
@@ -2545,13 +2313,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/addQuestion",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"addQuestion"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "addQuestion"]
 								}
 							},
 							"status": "Created",
@@ -2629,14 +2392,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/company/question/addTags",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"question",
-								"addTags"
-							]
+							"host": ["{{url}}"],
+							"path": ["company", "question", "addTags"]
 						}
 					},
 					"response": [
@@ -2667,14 +2424,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/company/question/addTags",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"company",
-										"question",
-										"addTags"
-									]
+									"host": ["{{url}}"],
+									"path": ["company", "question", "addTags"]
 								}
 							},
 							"status": "OK",
@@ -2743,13 +2494,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/admin/addQuestion",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"admin",
-								"addQuestion"
-							]
+							"host": ["{{url}}"],
+							"path": ["admin", "addQuestion"]
 						},
 						"description": "This endpoint is to add standard question bank questions"
 					},
@@ -2772,13 +2518,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/admin/addQuestion",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"addQuestion"
-									]
+									"host": ["{{url}}"],
+									"path": ["admin", "addQuestion"]
 								}
 							},
 							"status": "Created",
@@ -2835,13 +2576,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/admin/addQuestion",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"addQuestion"
-									]
+									"host": ["{{url}}"],
+									"path": ["admin", "addQuestion"]
 								}
 							},
 							"status": "Bad Request",
@@ -2905,13 +2641,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/admin/signup",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"admin",
-								"signup"
-							]
+							"host": ["{{url}}"],
+							"path": ["admin", "signup"]
 						},
 						"description": "This endpoint is used to create an Admin"
 					},
@@ -2939,13 +2670,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/admin/signup",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"signup"
-									]
+									"host": ["{{url}}"],
+									"path": ["admin", "signup"]
 								}
 							},
 							"status": "Created",
@@ -3009,13 +2735,8 @@
 						},
 						"url": {
 							"raw": "{{url}}/admin/signin",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"admin",
-								"signin"
-							]
+							"host": ["{{url}}"],
+							"path": ["admin", "signin"]
 						},
 						"description": "This endpoint is used to login as Admin\n"
 					},
@@ -3043,13 +2764,8 @@
 								},
 								"url": {
 									"raw": "{{url}}/admin/signin",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"signin"
-									]
+									"host": ["{{url}}"],
+									"path": ["admin", "signin"]
 								}
 							},
 							"status": "OK",
@@ -3103,9 +2819,7 @@
 			"script": {
 				"id": "6d97f5ee-5c93-49e2-ace8-49396e750dac",
 				"type": "text/javascript",
-				"exec": [
-					""
-				]
+				"exec": [""]
 			}
 		},
 		{
@@ -3113,9 +2827,7 @@
 			"script": {
 				"id": "3f683da6-847c-48e0-9199-989a1e19c14d",
 				"type": "text/javascript",
-				"exec": [
-					""
-				]
+				"exec": [""]
 			}
 		}
 	],
